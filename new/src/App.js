@@ -1,26 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const hello = (props)=>{
+  return(
+    <div className="Hello">
+    <p>Hello, my name is {props.person.personName}</p>
+    <p>I live in {props.person.personCity}</p>
+    <p>I like
+    <ul>{props.person.favorites.map(animal =>{
+      return <li>{animal}</li>
+    })}</ul>
+    </p>
+  </div>
+)
 }
 
-export default App;
+export default hello;
